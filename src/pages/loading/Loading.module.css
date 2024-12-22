@@ -1,0 +1,7 @@
+.loading_bg_img {
+    background-image: url("../../assets/image/bgImg.png");
+}
+.btn {
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+}

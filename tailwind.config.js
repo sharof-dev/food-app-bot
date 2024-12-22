@@ -9,6 +9,9 @@ export default {
       animation: {
         spin: "spin 1s linear infinite",
       },
+      backgroundImage: {
+        "lodaing-bg-img": `url(./src/assets/image/bgImg.png)`
+      }
     },
   },
   plugins: [],
