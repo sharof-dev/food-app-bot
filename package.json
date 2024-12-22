@@ -1,8 +1,8 @@
 {
-  "homepage": "http://oisdjnsfd.github.io/food-app-bot",
+  "homepage": "http://sharof-dev.github.io/oisdjnsfd",
   "name": "food-app-bot",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
