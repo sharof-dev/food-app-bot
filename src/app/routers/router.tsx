@@ -1,11 +1,14 @@
-// import { lazy } from "react";
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Loading from "../../pages/loading/Loading";
-// const Home = lazy(() => import("../../pages/home/Home"))
+const Home = lazy(() => import("../../pages/home/Home"))
+const GetStarted = lazy(() => import("../../pages/home/started/GetStarted"))
 export const routes = createBrowserRouter([
     {
         path: "/",
-        // element: <Home />
-        element: <Loading />
+        element: <GetStarted />
+    },
+    {
+        path: "/home",
+        element: <Home />
     }
 ])

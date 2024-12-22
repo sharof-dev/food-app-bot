@@ -1,18 +1,22 @@
-import RightSvg from "../../assets/icon/right.svg"
-import LoadingCss from "./Loading.module.css"
+import { Circles } from "react-loader-spinner"
+import LoadingLogo from "../../assets/icon/loading_logo.tsx"
 const Loading = () => {
   return (
-    <div className={`h-screen w-full bg-cover text-white relative ${LoadingCss.loading_bg_img}`}>
-      <div className="absolute inset-0 bg-gradient-to-t from-black bg-opacity-50">
-        <div className="flex flex-col justify-end h-screen">
-          <div className="px-5">
-            <h1 className="font-bold text-[#02C543] text-[50px] text-center">Welcome to foodnies!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-          </div>
-          <button className={`flex bg-green-500 hover:bg-green-600 shadow-lg mt-6 mb-6 py-2  ${LoadingCss.btn}  w-[275px] text-[20px] text-center text-lg text-white self-end`}>
-           <img src={RightSvg} alt="" /> Get Started
-          </button>
-        </div>
+    <div className={`h-screen w-full bg-cover text-white relative`}>
+      <div className="flex flex-col justify-center items-center gap-5 w-full h-[80vh] font-logoTitle text-5xl">
+        <LoadingLogo />
+        <h1 className="font-logoTitle">Food<span className="font-logoTitle text-[#02C543]">ies</span></h1>
+      </div>
+      <div className="place-items-center grid h-[20vh]">
+        <Circles
+          height="80"
+          width="80"
+          color="#4fa94d"
+          ariaLabel="circles-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
       </div>
     </div>
   )

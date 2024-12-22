@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
@@ -11,6 +11,10 @@ export default {
       },
       backgroundImage: {
         "lodaing-bg-img": `url(./src/assets/image/bgImg.png)`
+      },
+      fontFamily: {
+        logoTitle: ["Itim", 'sans-serif'],  // "Itim" shriftini belgilash
+        body: ["Poppins", 'sans-serif'],
       }
     },
   },
