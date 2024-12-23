@@ -1,0 +1,1 @@
+import{r as s,j as e,L as o}from"./index-Vg1Kisy3.js";const n=()=>{const[t,r]=s.useState(!0);return s.useEffect(()=>{const a=setTimeout(()=>{r(!1)},2e3);return()=>clearTimeout(a)},[]),t?e.jsx(o,{}):e.jsx("div",{className:"bg-[#1e1e1e] h-screen",children:e.jsx("h1",{children:"Home Page"})})};export{n as default};
