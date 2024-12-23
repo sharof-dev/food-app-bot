@@ -1,7 +1,6 @@
-import { RouterProvider } from "react-router-dom"
-import { routes } from "./app/routers/router"
 import { Suspense, useEffect } from "react"
 import Loading from "./pages/loading/Loading"
+import { AppRoutes } from "./app/routers/router";
 
 const App = () => {
   useEffect(() => {
@@ -14,7 +13,7 @@ const App = () => {
   return (
     <div className="bg-[#1e1e1e] font-body">
       <Suspense fallback={<Loading />}>
-        <RouterProvider router={routes} />
+        <AppRoutes />
       </Suspense>
     </div>
   )
