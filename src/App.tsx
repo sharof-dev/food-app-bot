@@ -7,6 +7,7 @@ const App = () => {
     const cwindow: any = window;
     void cwindow?.Telegram?.WebApp.ready();
     void cwindow?.Telegram?.WebApp.expand(true);
+    void cwindow?.Telegram?.WebApp.requestFullscreen();
     void cwindow?.Telegram?.WebApp.enableClosingConfirmation();
     void cwindow?.Telegram?.WebApp.setHeaderColor("#1A202E");
     void cwindow?.Telegram?.WebApp.setBackgroundColor("#1A202E");
