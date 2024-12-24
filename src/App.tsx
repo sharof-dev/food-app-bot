@@ -6,9 +6,9 @@ const App = () => {
   useEffect(() => {
     const cwindow: any = window;
     void cwindow?.Telegram?.WebApp.ready();
-    // void cwindow?.Telegramt?.setUrl("https://sharof-dev.github.io/food-app-bot/")
-    // void cwindow?.Telegram?.WebApp.expand(true);
-    // void cwindow?.Telegram?.WebApp.enableClosingConfirmation();
+    void cwindow?.Telegramt?.setUrl("https://sharof-dev.github.io/food-app-bot/")
+    void cwindow?.Telegram?.WebApp.expand(true);
+    void cwindow?.Telegram?.WebApp.enableClosingConfirmation();
   })
   return (
     <div className="bg-[#1e1e1e] font-body">
