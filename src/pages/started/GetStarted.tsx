@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import RightSvg from "../../../assets/icon/RightSvg.tsx"
+import RightSvg from "../../assets/icon/RightSvg.tsx"
 import "./loading.module.css"
-import Loading from "../../loading/Loading.tsx";
+import Loading from "../loading/Loading.tsx";
 import bgImg from "@/assets/image/bgImg.png";
 import { useNavigate } from "react-router-dom";
 const GetStarted = () => {
@@ -31,7 +31,7 @@ const GetStarted = () => {
           </div>
           <button
             className={`flex bg-green-500 hover:bg-green-600 shadow-lg mt-6 mb-6 rounded-tl-full rounded-bl-full w-[275px] h-[60px] text-[20px] text-center items-center text-lg text-white self-end`}
-            onClick={() => navigate('/home')}>
+            onClick={() => navigate('/order-for-food')}>
             <RightSvg /> <span className="ml-5">Get Started...!</span>
           </button>
         </div>

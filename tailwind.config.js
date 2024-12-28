@@ -13,8 +13,14 @@ export default {
         "lodaing-bg-img": `url(./src/assets/image/bgImg.png)`
       },
       fontFamily: {
-        logoTitle: ["Itim", 'sans-serif'],  // "Itim" shriftini belgilash
+        logoTitle: ["Itim", 'sans-serif'],
         body: ["Poppins", 'sans-serif'],
+      },
+      colors: {
+        'green': {
+          100: "#02c543c4",
+          200: "#02C543"
+        }
       }
     },
   },
