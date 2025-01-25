@@ -41,7 +41,7 @@ const cartItems: CartItem[] = [
   }
 ];
 
-const Basket = () => {  
+const Basket = () => {
   const deliveryFee = 2.00;
   const discounts = 0.00;
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -49,41 +49,42 @@ const Basket = () => {
   const [cartItemCopy, setCartItemCopy] = useState(cartItems)
   const navigate = useNavigate()
   const addQuantity = (id: number) => {
-    const updatedCart =cartItemCopy.map((cartItem) =>{
-     if(cartItem.id === id) {
-      return  {...cartItem, quantity: cartItem.quantity + 1 } 
-     } else {
-       return cartItem;
-     }
+    const updatedCart = cartItemCopy.map((cartItem) => {
+      if (cartItem.id === id) {
+        return { ...cartItem, quantity: cartItem.quantity + 1 }
+      } else {
+        return cartItem;
+      }
     })
     setCartItemCopy(updatedCart)
   }
   const minusQuantity = (id: number) => {
-    const updatedCart =cartItemCopy.map((cartItem) =>{
-     if(cartItem.id === id) {
-      return  {...cartItem, quantity: cartItem.quantity - 1 } 
-     } else {
-       return cartItem;
-     }
+    const updatedCart = cartItemCopy.map((cartItem) => {
+      if (cartItem.id === id) {
+        return { ...cartItem, quantity: cartItem.quantity - 1 }
+      } else {
+        return cartItem;
+      }
     })
     setCartItemCopy(updatedCart)
   }
 
   const removeItem = (id: number) => {
-    const updatedCart = cartItemCopy.filter((cartItem) => cartItem.id!== id);
+    const updatedCart = cartItemCopy.filter((cartItem) => cartItem.id !== id);
     setCartItemCopy(updatedCart);
   }
 
   return (
     <div className="flex flex-col justify-between bg-[1e1e1e] min-h-screen text-white">
-      <header className="flex justify-between items-center px-2 py-6">
-        <div className="flex items-center gap-4">
+      <header className="flex items-center px-2 py-6">
+        <div className="flex items-center gap-4 w-[10%]">
           <IconButton onClick={() => navigate(-1)}>
             <ArrowLeft className="w-6 h-6" />
           </IconButton>
-          <h1 className="font-semibold text-xl">My Cart</h1>
         </div>
-        <Menu className="w-6 h-6" />
+        <div className='w-[90%]'>
+          <h1 className="font-semibold text-center text-xl">My Cart</h1>
+        </div>
       </header>
 
       {/* Cart Items */}
@@ -107,9 +108,9 @@ const Basket = () => {
                   <button className="text-gray-400 hover:text-red-500">
                     <Trash2 onClick={() => removeItem(item.id)} className="relative -top-3 justify-self-end w-7 h-7 l-5" />
                   </button>
-  
+
                 </div>
-                  <div className="flex justify-between items-end gap-2">
+                <div className="flex justify-between items-end gap-2">
                   <p className="font-semibold text-green-500">${item.price.toFixed(2)}</p>
                   <div className="flex items-center gap-3 px-2 py-1 rounded-lg">
                     <button onClick={() => minusQuantity(item.id)} className="border-2 hover:border-green-200 border-solid rounded-full hover:text-green-500">
