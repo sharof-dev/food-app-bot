@@ -15,6 +15,7 @@ export default {
       fontFamily: {
         logoTitle: ["Itim", 'sans-serif'],
         body: ["Poppins", 'sans-serif'],
+        cartFont: ["Inter"]
       },
       colors: {
         'green': {
