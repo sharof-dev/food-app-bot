@@ -20,8 +20,8 @@ export const AppRoutes: React.FC = () => {
                 <Route path="/home" element={<Home />} />
                 <Route path="/wishes" element={<Wishes />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/basket" element={<Basket />} />
             </Route>
-            <Route path="/basket" element={<Basket />} />
         </Routes>
     </Router>
 }
