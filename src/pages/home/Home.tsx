@@ -45,7 +45,7 @@ const Home = () => {
   return (
     <div className="bg-gray-900 p-6 min-h-screen text-white">
       <div className="mb-20">
-        {/* Header */}
+       
         <header className="flex justify-between items-center mb-6">
 
           <div className="relative">
@@ -61,10 +61,6 @@ const Home = () => {
           </div>
         </header>
 
-        {/* Search Bar */}
-
-
-        {/* Special Offers */}
         <div className="mb-8">
           <div className="flex justify-between items-center mb-4">
             <h3 className="font-semibold text-lg">Special offers</h3>
@@ -76,7 +72,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Categories */}
         <div className="gap-4 grid grid-cols-4 mb-8">
           {categories.map((category) => (
             <button
@@ -88,8 +83,7 @@ const Home = () => {
             </button>
           ))}
         </div>
-
-        {/* Weekly Special */}
+        
         <div>
           <div className="flex justify-between items-center mb-4">
             <h3 className="font-semibold text-lg">Weekly Special</h3>
