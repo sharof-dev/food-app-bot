@@ -1,8 +1,9 @@
 import React from "react";
 
 export interface ButtonProps {
-    text: string;
-    onClick: () => void;
+    text?: string;
+    onClick?: () => void;
+    children?: React.ReactNode;
 };
 
 export interface IconButtonProps{

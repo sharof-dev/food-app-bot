@@ -10,6 +10,7 @@ import { MdPayment } from "react-icons/md";
 import { LuMessageCircleMore } from "react-icons/lu";
 import { TbLogout2 } from "react-icons/tb";
 import "./profil.css"; // CSS faylini import qilish
+import Button from "../../lib/widgets/button/Button";
 
 const Profile = () => {
   const [logoutVisible, setLogoutVisible] = useState(false);
@@ -97,7 +98,7 @@ const Profile = () => {
           <p className="text-center">Are you sure you want to log out?</p>
           <div className="flex justify-center gap-8 mt-4">
             <Button onClick={closeLogout}>Cancel</Button>
-            <Button type="primary" danger onClick={handleLogout}>
+            <Button onClick={handleLogout}>
               Yes, logout
             </Button>
           </div>
