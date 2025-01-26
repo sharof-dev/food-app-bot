@@ -1,14 +1,14 @@
-/* Custom scrollbar styles */
+/* Custom scrollbar styles
 .custom-scrollbar::-webkit-scrollbar {
-  width: 2px; /* Scroll kengligi */
+  width: 2px; 
   height: 10px !important;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #02c543; /* Scrollning rangi (yashil) */
-  border-radius: 4px; /* Scrollning yumaloqligi */
+  background-color: #02c543; 
+  border-radius: 4px; 
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent; /* Orqa fonni shaffof qilish */
-}
+  background: transparent;
+} */
