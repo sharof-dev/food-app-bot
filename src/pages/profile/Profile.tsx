@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Drawer, Button } from "antd";
+import { Button } from "antd";
 import {
   UserOutlined,
   SettingOutlined,
@@ -10,18 +10,10 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
 import { LuMessageCircleMore } from "react-icons/lu";
 import { TbLogout2 } from "react-icons/tb";
+import "./profil.css"; // CSS faylini import qilish
 
 const Profile = () => {
-  const [drawerVisible, setDrawerVisible] = useState(false);
   const [logoutVisible, setLogoutVisible] = useState(false);
-
-  const showDrawer = () => {
-    setDrawerVisible(true);
-  };
-
-  const closeDrawer = () => {
-    setDrawerVisible(false);
-  };
 
   const showLogout = () => {
     setLogoutVisible(true);
@@ -38,100 +30,64 @@ const Profile = () => {
 
   return (
     <div className="p-4 bg-[#191A1F] w-full h-screen relative">
-      <button
-        onClick={showDrawer}
-        className=" rounded-lg bg-[#01040F] text-white w-full h-[2.5rem]"
-      >
-        Open Profile
-      </button>
-
-      {/* sdsds */}
-
-      <Drawer
-        placement="right"
-        onClose={closeDrawer}
-        closeIcon={null}
-        visible={drawerVisible}
-        width={260}
-        className="bg-orange-500 text-white"
-        style={{
-          background: "#01040F",
-          borderRadius: "67px 0px 0px 67px",
-        }}
-      >
-        <div className="flex items-center gap-2 mt-5">
-          <img
-            className=" w-10 h-10 rounded-full object-cover"
-            src="https://s3-alpha-sig.figma.com/img/f08f/f99a/5860f89adadb94ca2770dfda57df5ae3?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=L9pzRhM0dG-jtsh7HI-APelzC-T1h2mK90ScXpTn7pCW4nM8aoqiRdXRYqMlBVq8m2-cV2U~wILQwxoitjWP52~ztXFPm5rHfpOI~cepAu49XZ0hokysqIVuSP1LsGzRyN-kUYW1qPDWR8b5w3X4E-D98Ot11qn6pQrDzA6LzTSXJULKWRH3Lw-Zff8fsLnaKihh9sWXNr~J09Nqb0JBU8yxEMI6XYGVq2tOIn-gDfRvtsNmXWBvkYNkvmIzqpbtKlO0800F2SBZpZS59b1DrHzLZHTNc1X5q9iBEQDO0BAWjnzwAQvOFZi1zyX76lNVd4-F2jYjl4eo~bviLbUhkw__"
-            alt="logo"
-          />
-          <div className="ml-4">
-            <p className="text-white text-[18px]">John K Square</p>
-            <p className="text-white text-[12px]">Loremipsum@email.com</p>
-          </div>
+      <div className="flex flex-col items-center gap-2 mt-5">
+        <img
+          className="w-10 h-10 rounded-full object-cover"
+          src="https://s3-alpha-sig.figma.com/img/f08f/f99a/5860f89adadb94ca2770dfda57df5ae3?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=L9pzRhM0dG-jtsh7HI-APelzC-T1h2mK90ScXpTn7pCW4nM8aoqiRdXRYqMlBVq8m2-cV2U~wILQwxoitjWP52~ztXFPm5rHfpOI~cepAu49XZ0hokysqIVuSP1LsGzRyN-kUYW1qPDWR8b5w3X4E-D98Ot11qn6pQrDzA6LzTSXJULKWRH3Lw-Zff8fsLnaKihh9sWXNr~J09Nqb0JBU8yxEMI6XYGVq2tOIn-gDfRvtsNmXWBvkYNkvmIzqpbtKlO0800F2SBZpZS59b1DrHzLZHTNc1X5q9iBEQDO0BAWjnzwAQvOFZi1zyX76lNVd4-F2jYjl4eo~bviLbUhkw__"
+          alt="logo"
+        />
+        <div className="ml-4">
+          <p className="text-white text-[18px]">John K Square</p>
+          <p className="text-white text-[12px]">Loremipsum@email.com</p>
         </div>
-        <div className="space-y-4 mt-8">
-          <div className="flex items-center space-x-4 cursor-pointer">
-            <button className=" bg-[#02C543]  rounded-full w-8 h-8   flex items-center justify-center">
-              <RiShoppingBagLine className=" size-4" />{" "}
-            </button>
-            <span>My Orders</span>
-          </div>
-          <hr />
-          <div className="flex items-center space-x-4 cursor-pointer">
-            <button className=" bg-[#02C543]  rounded-full w-8 h-8   flex items-center justify-center">
-              <UserOutlined className=" size-4" />
-            </button>
-            <span>My Profile</span>
-          </div>
-          <hr />
-          <div className="flex items-center space-x-4 cursor-pointer">
-            <button className=" bg-[#02C543]  rounded-full w-8 h-8   flex items-center justify-center">
-              <FaMapMarkerAlt className=" size-4" />
-            </button>
-            <span>Delivery Address</span>
-          </div>
-          <hr />
-          <div className="flex items-center space-x-4 cursor-pointer">
-            <button className=" bg-[#02C543]  rounded-full w-8 h-8   flex items-center justify-center">
-              <MdPayment className=" size-4" />
-            </button>
-            <span>Payment Methods</span>
-          </div>
-          <hr />
-          <div className="flex items-center space-x-4 cursor-pointer">
-            <button className=" bg-[#02C543]  rounded-full w-8 h-8   flex items-center justify-center">
-              <PhoneOutlined className=" size-4" />
-            </button>
-            <span>Contact Us</span>
-          </div>
-          <hr />
-          <div className="flex items-center space-x-4 cursor-pointer">
-            <button className=" bg-[#02C543]  rounded-full w-8 h-8   flex items-center justify-center">
-              <LuMessageCircleMore className=" size-4" />
-            </button>
-            <span>Help & FAQs</span>
-          </div>
-          <hr />
-          <div className="flex items-center space-x-4 cursor-pointer">
-            <button className=" bg-[#02C543]  rounded-full w-8 h-8   flex items-center justify-center">
-              <SettingOutlined className=" size-4" />
-            </button>
-            <span>Settings</span>
-          </div>
-          <hr />
+      </div>
+      <div className="space-y-4 mt-8 h-[323px] overflow-y-scroll custom-scrollbar p-1">
+        <div className="flex items-center cursor-pointer bg-[#01040F] gap-4 text-white p-3 ps-5 rounded-[1.125rem]">
+          <RiShoppingBagLine className="size-4" />
+          <span>My Orders</span>
         </div>
 
-        <div className="mt-6 relative">
-          <button
-            onClick={showLogout}
-            className="flex items-center justify-center gap-5"
-          >
-            <TbLogout2 className=" size-6" />
-            Log Out
-          </button>
+        <div className="flex items-center cursor-pointer bg-[#01040F] gap-4 text-white p-3 ps-5 rounded-[1.125rem]">
+          <UserOutlined className="size-4" />
+          <span>My Profile</span>
         </div>
-      </Drawer>
+
+        <div className="flex items-center cursor-pointer bg-[#01040F] gap-4 text-white p-3 ps-5 rounded-[1.125rem]">
+          <FaMapMarkerAlt className="size-4" />
+          <span>Delivery Address</span>
+        </div>
+
+        <div className="flex items-center cursor-pointer bg-[#01040F] gap-4 text-white p-3 ps-5 rounded-[1.125rem]">
+          <MdPayment className="size-4" />
+          <span>Payment Methods</span>
+        </div>
+
+        <div className="flex items-center cursor-pointer bg-[#01040F] gap-4 text-white p-3 ps-5 rounded-[1.125rem]">
+          <PhoneOutlined className="size-4" />
+          <span>Contact Us</span>
+        </div>
+
+        <div className="flex items-center cursor-pointer bg-[#01040F] gap-4 text-white p-3 ps-5 rounded-[1.125rem]">
+          <LuMessageCircleMore className="size-4" />
+          <span>Help & FAQs</span>
+        </div>
+
+        <div className="flex items-center cursor-pointer bg-[#01040F] gap-4 text-white p-3 ps-5 rounded-[1.125rem]">
+          <SettingOutlined className="size-4" />
+          <span>Settings</span>
+        </div>
+      </div>
+      <hr className="mt-2" />
+      <div className="mt-8 relative">
+        <button
+          onClick={showLogout}
+          className="flex items-center justify-between w-full text-white"
+        >
+          Log Out
+          <TbLogout2 className="size-6" />
+        </button>
+      </div>
+
       {logoutVisible && (
         <div
           className="fixed bottom-0 left-0 w-full bg-white p-4 shadow-lg rounded-t-lg"
