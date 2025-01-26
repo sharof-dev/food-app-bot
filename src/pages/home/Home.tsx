@@ -47,34 +47,22 @@ const Home = () => {
       <div className="mb-20">
         {/* Header */}
         <header className="flex justify-between items-center mb-6">
-          <div className="flex items-center gap-3">
-            <div className="bg-gray-600 rounded-full w-10 h-10 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80"
-                alt="Profile"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <p className="text-gray-400 text-sm">Customer</p>
-              <h2 className="font-semibold">John K Square</h2>
-            </div>
+
+          <div className="relative">
+            <Search className="top-3 left-4 absolute w-5 h-5 text-gray-400" />
+            <input
+              type="text"
+              placeholder="Search your interesting foods..."
+              className="bg-gray-800 py-3 pr-4 pl-12 rounded-full focus:ring-2 focus:ring-green-500 w-full focus:outline-none"
+            />
           </div>
           <div className="flex gap-4">
             <Bell className="w-6 h-6" />
-            <Search className="w-6 h-6" />
           </div>
         </header>
 
         {/* Search Bar */}
-        <div className="relative mb-8">
-          <Search className="top-3 left-4 absolute w-5 h-5 text-gray-400" />
-          <input
-            type="text"
-            placeholder="Search your interesting foods..."
-            className="bg-gray-800 py-3 pr-4 pl-12 rounded-full focus:ring-2 focus:ring-green-500 w-full focus:outline-none"
-          />
-        </div>
+
 
         {/* Special Offers */}
         <div className="mb-8">
