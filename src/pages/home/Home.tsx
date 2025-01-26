@@ -34,6 +34,46 @@ const weeklySpecials = [
     name: 'Grilled Chicken',
     image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
   },
+  {
+    id: 4,
+    name: 'Grilled Chicken',
+    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
+  },
+  {
+    id: 4,
+    name: 'Grilled Chicken',
+    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
+  },
+  {
+    id: 4,
+    name: 'Grilled Chicken',
+    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
+  },
+  {
+    id: 4,
+    name: 'Grilled Chicken',
+    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
+  },
+  {
+    id: 4,
+    name: 'Grilled Chicken',
+    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
+  },
+  {
+    id: 4,
+    name: 'Grilled Chicken',
+    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
+  },
+  {
+    id: 4,
+    name: 'Grilled Chicken',
+    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
+  },
+  {
+    id: 4,
+    name: 'Grilled Chicken',
+    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
+  },
 ];
 
 
