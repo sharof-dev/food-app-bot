@@ -24,6 +24,16 @@ const weeklySpecials = [
     name: 'Grilled Chicken',
     image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
   },
+  {
+    id: 3,
+    name: 'Grilled Chicken',
+    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
+  },
+  {
+    id: 4,
+    name: 'Grilled Chicken',
+    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
+  },
 ];
 
 
@@ -62,10 +72,6 @@ const Home = () => {
         </header>
 
         <div className="mb-8">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="font-semibold text-lg">Special offers</h3>
-            <button className="text-green-500 text-sm">See more...</button>
-          </div>
           <div className="bg-gradient-to-r from-green-500 to-green-400 p-6 rounded-2xl">
             <h2 className="mb-2 font-bold text-4xl">30%</h2>
             <p className="text-xl">off from chicken burger</p>
@@ -83,12 +89,8 @@ const Home = () => {
             </button>
           ))}
         </div>
-        
+
         <div>
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="font-semibold text-lg">Weekly Special</h3>
-            <button className="text-green-500 text-sm">See all</button>
-          </div>
           <div className="gap-4 grid grid-cols-2">
             {weeklySpecials.map((item) => (
               <div key={item.id} className="bg-gray-800 rounded-xl overflow-hidden">

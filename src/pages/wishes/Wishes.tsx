@@ -90,7 +90,7 @@ const Wishes = () => {
     <div className="flex flex-col justify-between bg-[1e1e1e] min-h-screen text-white">
     <div className='mb-16'>
       <header className="px-2 py-6 text-center">
-        <h1 className="font-semibold text-center text-xl">My Cart</h1>
+        <h1 className="font-semibold text-center text-xl">Saqalangan Ovqatlar</h1>
       </header>
 
       {/* Cart Items */}
