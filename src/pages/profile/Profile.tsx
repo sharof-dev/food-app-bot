@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Button } from "antd";
 import {
   UserOutlined,
   SettingOutlined,
@@ -29,59 +28,59 @@ const Profile = () => {
   };
 
   return (
-    <div className="p-4 bg-[#191A1F] w-full h-screen relative">
+    <div className="relative bg-[#191A1F] p-4 w-full h-screen">
       <div className="flex flex-col items-center gap-2 mt-5">
         <img
-          className="w-10 h-10 rounded-full object-cover"
+          className="rounded-full w-10 h-10 object-cover"
           src="https://s3-alpha-sig.figma.com/img/f08f/f99a/5860f89adadb94ca2770dfda57df5ae3?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=L9pzRhM0dG-jtsh7HI-APelzC-T1h2mK90ScXpTn7pCW4nM8aoqiRdXRYqMlBVq8m2-cV2U~wILQwxoitjWP52~ztXFPm5rHfpOI~cepAu49XZ0hokysqIVuSP1LsGzRyN-kUYW1qPDWR8b5w3X4E-D98Ot11qn6pQrDzA6LzTSXJULKWRH3Lw-Zff8fsLnaKihh9sWXNr~J09Nqb0JBU8yxEMI6XYGVq2tOIn-gDfRvtsNmXWBvkYNkvmIzqpbtKlO0800F2SBZpZS59b1DrHzLZHTNc1X5q9iBEQDO0BAWjnzwAQvOFZi1zyX76lNVd4-F2jYjl4eo~bviLbUhkw__"
           alt="logo"
         />
         <div className="ml-4">
-          <p className="text-white text-[18px]">John K Square</p>
-          <p className="text-white text-[12px]">Loremipsum@email.com</p>
+          <p className="text-[18px] text-white">John K Square</p>
+          <p className="text-[12px] text-white">Loremipsum@email.com</p>
         </div>
       </div>
-      <div className="space-y-4 mt-8 h-[323px] overflow-y-scroll custom-scrollbar p-1">
-        <div className="flex items-center cursor-pointer bg-[#01040F] gap-4 text-white p-3 ps-5 rounded-[1.125rem]">
+      <div className="space-y-4 custom-scrollbar mt-8 p-1 h-[323px] overflow-y-scroll">
+        <div className="flex items-center gap-4 bg-[#01040F] p-3 rounded-[1.125rem] text-white cursor-pointer ps-5">
           <RiShoppingBagLine className="size-4" />
           <span>My Orders</span>
         </div>
 
-        <div className="flex items-center cursor-pointer bg-[#01040F] gap-4 text-white p-3 ps-5 rounded-[1.125rem]">
+        <div className="flex items-center gap-4 bg-[#01040F] p-3 rounded-[1.125rem] text-white cursor-pointer ps-5">
           <UserOutlined className="size-4" />
           <span>My Profile</span>
         </div>
 
-        <div className="flex items-center cursor-pointer bg-[#01040F] gap-4 text-white p-3 ps-5 rounded-[1.125rem]">
+        <div className="flex items-center gap-4 bg-[#01040F] p-3 rounded-[1.125rem] text-white cursor-pointer ps-5">
           <FaMapMarkerAlt className="size-4" />
           <span>Delivery Address</span>
         </div>
 
-        <div className="flex items-center cursor-pointer bg-[#01040F] gap-4 text-white p-3 ps-5 rounded-[1.125rem]">
+        <div className="flex items-center gap-4 bg-[#01040F] p-3 rounded-[1.125rem] text-white cursor-pointer ps-5">
           <MdPayment className="size-4" />
           <span>Payment Methods</span>
         </div>
 
-        <div className="flex items-center cursor-pointer bg-[#01040F] gap-4 text-white p-3 ps-5 rounded-[1.125rem]">
+        <div className="flex items-center gap-4 bg-[#01040F] p-3 rounded-[1.125rem] text-white cursor-pointer ps-5">
           <PhoneOutlined className="size-4" />
           <span>Contact Us</span>
         </div>
 
-        <div className="flex items-center cursor-pointer bg-[#01040F] gap-4 text-white p-3 ps-5 rounded-[1.125rem]">
+        <div className="flex items-center gap-4 bg-[#01040F] p-3 rounded-[1.125rem] text-white cursor-pointer ps-5">
           <LuMessageCircleMore className="size-4" />
           <span>Help & FAQs</span>
         </div>
 
-        <div className="flex items-center cursor-pointer bg-[#01040F] gap-4 text-white p-3 ps-5 rounded-[1.125rem]">
+        <div className="flex items-center gap-4 bg-[#01040F] p-3 rounded-[1.125rem] text-white cursor-pointer ps-5">
           <SettingOutlined className="size-4" />
           <span>Settings</span>
         </div>
       </div>
       <hr className="mt-2" />
-      <div className="mt-8 relative">
+      <div className="relative mt-8">
         <button
           onClick={showLogout}
-          className="flex items-center justify-between w-full text-white"
+          className="flex justify-between items-center w-full text-white"
         >
           Log Out
           <TbLogout2 className="size-6" />
@@ -90,7 +89,7 @@ const Profile = () => {
 
       {logoutVisible && (
         <div
-          className="fixed bottom-0 left-0 w-full bg-white p-4 shadow-lg rounded-t-lg"
+          className="bottom-0 left-0 fixed bg-white shadow-lg p-4 rounded-t-lg w-full"
           style={{
             zIndex: 1050, // Ensure it's above the Drawer
           }}
