@@ -146,7 +146,7 @@ const Home = () => {
         </div>
 
         <div className="overflow-x-auto">
-          <div className="flex gap-4 mb-24">
+          <div className="flex gap-4 mb-5">
             {categories.map((category) => (
               <button
                 key={category.id}
@@ -160,7 +160,7 @@ const Home = () => {
         </div>
 
         <div>
-          <div className="gap-6 grid grid-cols-2">
+          <div className="gap-6 grid grid-cols-2 mt-14">
             {weeklySpecials.map((item) => (
               <div className="relative flex flex-col justify-between bg-white mb-10 p-4 rounded-[28px] w-[175px] h-[187px]">
                 <div key={item.id} className="flex justify-center rounded-xl overflow-hidden">
@@ -172,15 +172,15 @@ const Home = () => {
                 </div>
                 <span className="top-14 -right-[45px] -z-[1] absolute font-semibold text-red-100 text-3xl rotate-[270deg] transform">PROMO</span>
                 <div className="flex items-end gap-2">
-                  <p className="font-semibold text-black">{item.name}</p>
+                  <p className="font-cartFont font-semibold text-black">{item.name}</p>
                   <div className="flex flex-col">
                     <p className="left-2 relative text-green-200">${item.price}</p>
                     <div className="flex">
                       <IconButton className="group">
-                        <IoBasket className="group-hover:text-white text-[18px] text-black" />
+                        <IoBasket className="group-hover:text-white text-[18px] text-green-200" />
                       </IconButton>
                       <IconButton className="group">
-                        <FaHeart className="group-hover:text-white text-[18px] text-black" />
+                        <FaHeart className="group-hover:text-white text-[18px] text-green-200" />
                       </IconButton>
                     </div>
                   </div>
