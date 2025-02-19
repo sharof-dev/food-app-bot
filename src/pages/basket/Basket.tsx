@@ -1,6 +1,4 @@
-import { ArrowLeft, Trash2, Plus, Minus, Menu } from 'lucide-react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import IconButton from '../../lib/widgets/icon-button/IconButton';
+import { Trash2, Plus, Minus } from 'lucide-react';
 import Burger from '../../assets/image/image-removebg-preview.png';
 import KFC from '../../assets/image/image-removebg-preview (1).png';
 import { useState } from 'react';

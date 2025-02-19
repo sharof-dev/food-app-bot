@@ -1,6 +1,16 @@
 import { useEffect, useState } from "react";
 import Loading from "../loading/Loading";
-import { Bell, Search } from 'lucide-react';
+import { Bell, Search, ShoppingCart } from 'lucide-react';
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Pagination, Autoplay } from 'swiper/modules';
+import Img from "../../assets/image/image 7.png"
+
+import "swiper/css";
+import "swiper/css/pagination";
+import { IoBasket } from "react-icons/io5";
+import { FaHeart } from "react-icons/fa6";
+import IconButton from "../../lib/widgets/icon-button/IconButton";
+import Notification from "../../lib/widgets/notification/Notification";
 
 const categories = [
   { id: 1, name: 'Burger', icon: '🍔' },
@@ -12,67 +22,54 @@ const categories = [
   { id: 7, name: 'Beer', icon: '🍺' },
   { id: 8, name: 'Others', icon: '🍽️' },
 ];
+const promotions = [
+  {
+    id: 1,
+    discount: "30%",
+    title: "off from chicken burger",
+    bgColor: "from-green-500 to-green-400",
+    img: Img
+  },
+  {
+    id: 2,
+    discount: "25%",
+    title: "off from pizza",
+    bgColor: "from-blue-500 to-blue-400",
+    img: Img
+  },
+  {
+    id: 3,
+    discount: "40%",
+    title: "off from salads",
+    bgColor: "from-purple-500 to-purple-400",
+    img: Img
+  }
+];
 
 const weeklySpecials = [
   {
     id: 1,
     name: 'Fresh Garden Salad',
-    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=300&q=80',
+    image: Img,
+    price: 1.25
   },
   {
     id: 2,
     name: 'Grilled Chicken',
-    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
+    image: Img,
+    price: 5.98
   },
   {
     id: 3,
     name: 'Grilled Chicken',
-    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
+    image: Img,
+    price: 5.98
   },
   {
     id: 4,
     name: 'Grilled Chicken',
-    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    id: 4,
-    name: 'Grilled Chicken',
-    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    id: 4,
-    name: 'Grilled Chicken',
-    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    id: 4,
-    name: 'Grilled Chicken',
-    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    id: 4,
-    name: 'Grilled Chicken',
-    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    id: 4,
-    name: 'Grilled Chicken',
-    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    id: 4,
-    name: 'Grilled Chicken',
-    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    id: 4,
-    name: 'Grilled Chicken',
-    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    id: 4,
-    name: 'Grilled Chicken',
-    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=300&q=80',
+    image: Img,
+    price: 5.98
   },
 ];
 
@@ -80,6 +77,15 @@ const weeklySpecials = [
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [open, setOpen] = useState<boolean>(false)
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -93,52 +99,93 @@ const Home = () => {
     return <Loading />;
   }
   return (
-    <div className="bg-gray-900 p-6 min-h-screen text-white">
+    <div className="bg-[#191a1f] p-4 min-h-screen text-white">
       <div className="mb-20">
-       
-        <header className="flex justify-between items-center mb-6">
 
+        <header className="flex justify-between items-center gap-4 mb-6">
           <div className="relative">
             <Search className="top-3 left-4 absolute w-5 h-5 text-gray-400" />
             <input
               type="text"
               placeholder="Search your interesting foods..."
-              className="bg-gray-800 py-3 pr-4 pl-12 rounded-full focus:ring-2 focus:ring-green-500 w-full focus:outline-none"
+              className="bg-gray-800 py-3 pr-4 pl-12 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 w-full"
             />
           </div>
           <div className="flex gap-4">
-            <Bell className="w-6 h-6" />
+            <Bell className="w-6 h-6 cursor-pointer"  onClick={showDrawer} />
           </div>
         </header>
+            <Notification showDrawer={open} onClose={onClose} />
 
         <div className="mb-8">
-          <div className="bg-gradient-to-r from-green-500 to-green-400 p-6 rounded-2xl">
-            <h2 className="mb-2 font-bold text-4xl">30%</h2>
-            <p className="text-xl">off from chicken burger</p>
-          </div>
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={20}
+            slidesPerView={1}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true
+            }}
+            className="w-full"
+          >
+            {promotions.map(promo => (
+              <SwiperSlide key={promo.id}>
+                <div className={`bg-gradient-to-r flex ${promo.bgColor} justify-between  p-4 rounded-[32px]`}>
+                  <div>
+                    <h2 className="mb-2 font-bold text-4xl">{promo.discount}</h2>
+                    <p className="text-xl">{promo.title}</p>
+                  </div>
+                  <img src={promo.img} alt="" />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
-        <div className="gap-4 grid grid-cols-4 mb-8">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              className="flex flex-col items-center bg-gray-800 hover:bg-gray-700 p-3 rounded-xl"
-            >
-              <span className="mb-1 text-2xl">{category.icon}</span>
-              <span className="text-xs">{category.name}</span>
-            </button>
-          ))}
+        <div className="overflow-x-auto">
+          <div className="flex gap-4 mb-24">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                className="flex flex-col items-center hover:bg-gray-700 p-3 rounded-lg"
+              >
+                <span className="mb-1 text-2xl">{category.icon}</span>
+                <span className="text-xs">{category.name}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
         <div>
-          <div className="gap-4 grid grid-cols-2">
+          <div className="gap-6 grid grid-cols-2">
             {weeklySpecials.map((item) => (
-              <div key={item.id} className="bg-gray-800 rounded-xl overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-32 object-cover"
-                />
+              <div className="relative flex flex-col justify-between bg-white mb-10 p-4 rounded-[28px] w-[175px] h-[187px]">
+                <div key={item.id} className="flex justify-center rounded-xl overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="-top-12 absolute"
+                  />
+                </div>
+                <span className="top-14 -right-[45px] -z-[1] absolute font-semibold text-red-100 text-3xl rotate-[270deg] transform">PROMO</span>
+                <div className="flex items-end gap-2">
+                  <p className="font-semibold text-black">{item.name}</p>
+                  <div className="flex flex-col">
+                    <p className="left-2 relative text-green-200">${item.price}</p>
+                    <div className="flex">
+                      <IconButton className="group">
+                        <IoBasket className="group-hover:text-white text-[18px] text-black" />
+                      </IconButton>
+                      <IconButton className="group">
+                        <FaHeart className="group-hover:text-white text-[18px] text-black" />
+                      </IconButton>
+                    </div>
+                  </div>
+
+                </div>
               </div>
             ))}
           </div>

@@ -12,3 +12,8 @@ export interface IconButtonProps{
     onClick?: () => void;
     children?: React.ReactNode;
 }
+
+export interface notificationProps {
+    showDrawer?: boolean;
+    onClose?: () => void;
+}
