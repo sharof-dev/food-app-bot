@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   UserOutlined,
   SettingOutlined,
@@ -9,9 +8,11 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
 import { LuMessageCircleMore } from "react-icons/lu";
 import "./profil.css"; 
+import { useNavigate } from "react-router-dom";
 
 
 const Profile = () => {
+  const navigate = useNavigate()
   return (
     <div className="relative bg-[#191A1F] p-4 w-full min-h-screen">
       <div className="mb-20">
@@ -27,37 +28,37 @@ const Profile = () => {
           </div>
         </div>
         <div className="space-y-4 mt-8 p-1">
-          <div className="flex items-center gap-4 bg-[#01040F] p-3 rounded-[1.125rem] text-white cursor-pointer ps-5">
+          <button onClick={() => navigate("/my-orders")} className="flex items-center gap-4 bg-[#01040F] p-3 ps-5 rounded-[1.125rem] text-white cursor-pointer">
             <RiShoppingBagLine className="size-4" />
             <span>My Orders</span>
-          </div>
+          </button>
 
-          <div className="flex items-center gap-4 bg-[#01040F] p-3 rounded-[1.125rem] text-white cursor-pointer ps-5">
+          <button onClick={() => navigate("/my-profile")} className="flex items-center gap-4 bg-[#01040F] p-3 ps-5 rounded-[1.125rem] text-white cursor-pointer">
             <UserOutlined className="size-4" />
             <span>My Profile</span>
-          </div>
+          </button>
 
-          <div className="flex items-center gap-4 bg-[#01040F] p-3 rounded-[1.125rem] text-white cursor-pointer ps-5">
+          <div className="flex items-center gap-4 bg-[#01040F] p-3 ps-5 rounded-[1.125rem] text-white cursor-pointer">
             <FaMapMarkerAlt className="size-4" />
             <span>Delivery Address</span>
           </div>
 
-          <div className="flex items-center gap-4 bg-[#01040F] p-3 rounded-[1.125rem] text-white cursor-pointer ps-5">
+          <div className="flex items-center gap-4 bg-[#01040F] p-3 ps-5 rounded-[1.125rem] text-white cursor-pointer">
             <MdPayment className="size-4" />
             <span>Payment Methods</span>
           </div>
 
-          <div className="flex items-center gap-4 bg-[#01040F] p-3 rounded-[1.125rem] text-white cursor-pointer ps-5">
+          <div className="flex items-center gap-4 bg-[#01040F] p-3 ps-5 rounded-[1.125rem] text-white cursor-pointer">
             <PhoneOutlined className="size-4" />
             <span>Contact Us</span>
           </div>
 
-          <div className="flex items-center gap-4 bg-[#01040F] p-3 rounded-[1.125rem] text-white cursor-pointer ps-5">
+          <div className="flex items-center gap-4 bg-[#01040F] p-3 ps-5 rounded-[1.125rem] text-white cursor-pointer">
             <LuMessageCircleMore className="size-4" />
             <span>Help & FAQs</span>
           </div>
 
-          <div className="flex items-center gap-4 bg-[#01040F] p-3 rounded-[1.125rem] text-white cursor-pointer ps-5">
+          <div className="flex items-center gap-4 bg-[#01040F] p-3 ps-5 rounded-[1.125rem] text-white cursor-pointer">
             <SettingOutlined className="size-4" />
             <span>Settings</span>
           </div>

@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { IconButtonProps } from "../../shared/types/GlobalTypes"
+import { IconButtonProps } from "../../../app/@types/GlobalTypes"
 
 const IconButton: FC<IconButtonProps> = ({ icon, onClick, className, children }) => {
     return (

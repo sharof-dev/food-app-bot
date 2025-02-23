@@ -1,13 +1,15 @@
 import { Drawer } from "antd"
 import { FC } from "react"
 import Img from "../../../assets/image/image 7.png"
-import { notificationProps } from "../../shared/types/GlobalTypes"
+import { notificationProps } from "../../../app/@types/GlobalTypes"
+import "./notificationcss.css"
 const Notification: FC<notificationProps> = ({ showDrawer, onClose }) => {
     return (
         <Drawer
             title="Notification"
             open={showDrawer}
             onClose={onClose}
+            className="custom-drawer"
             style={{
                 borderRadius: "10px 0 0 10px",
                 backgroundColor: "#191a1f",

@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
-import Loading from "../loading/Loading";
-import { Bell, Search, ShoppingCart } from 'lucide-react';
+// import Loading from "../loading/Loading";
+import { Bell, Search } from 'lucide-react';
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, Autoplay } from 'swiper/modules';
 import Img from "../../assets/image/image 7.png"
-
 import "swiper/css";
 import "swiper/css/pagination";
 import { IoBasket } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa6";
 import IconButton from "../../lib/widgets/icon-button/IconButton";
 import Notification from "../../lib/widgets/notification/Notification";
+import { useDispatch } from "react-redux";
+import { CartItem } from "../../app/@types/GlobalTypes";
+import { addToCart } from "../../app/slice/countSlice";
+import { addProduct } from "../../app/slice/wishesSlice";
 
 const categories = [
   { id: 1, name: 'Burger', icon: '🍔' },
@@ -19,7 +22,6 @@ const categories = [
   { id: 4, name: 'Chicken', icon: '🍗' },
   { id: 5, name: 'Vegetarian', icon: '🥗' },
   { id: 6, name: 'Cake', icon: '🍰' },
-  { id: 7, name: 'Beer', icon: '🍺' },
   { id: 8, name: 'Others', icon: '🍽️' },
 ];
 const promotions = [
@@ -51,33 +53,50 @@ const weeklySpecials = [
     id: 1,
     name: 'Fresh Garden Salad',
     image: Img,
-    price: 1.25
+    price: 1.25,
+    category: "salat",
+    quantity: 0,
   },
   {
     id: 2,
     name: 'Grilled Chicken',
     image: Img,
-    price: 5.98
+    price: 5.98,
+    category: "BBQ",
+    quantity: 0,
   },
   {
     id: 3,
-    name: 'Grilled Chicken',
+    name: 'Grill',
     image: Img,
-    price: 5.98
+    price: 5.98,
+    category: "tovuq",
+    quantity: 0,
   },
   {
     id: 4,
-    name: 'Grilled Chicken',
+    name: 'Burger',
     image: Img,
-    price: 5.98
+    price: 5.98,
+    category: "fassfood",
+    quantity: 1,
   },
 ];
 
 
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [open, setOpen] = useState<boolean>(false)
+  // const [isLoading, setIsLoading] = useState(true);
+  const [open, setOpen] = useState<boolean>(false);
+  const dispatch = useDispatch();
+  const handleWishes = (id: CartItem) => {
+    dispatch(addProduct(id))
+    
+  }
+
+  const handleAddToCart = (product: CartItem) => {
+    dispatch(addToCart(product))
+  }
 
   const showDrawer = () => {
     setOpen(true);
@@ -87,17 +106,17 @@ const Home = () => {
     setOpen(false);
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 2000);
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  if (isLoading) {
-    return <Loading />;
-  }
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
   return (
     <div className="bg-[#191a1f] p-4 min-h-screen text-white">
       <div className="mb-20">
@@ -112,10 +131,10 @@ const Home = () => {
             />
           </div>
           <div className="flex gap-4">
-            <Bell className="w-6 h-6 cursor-pointer"  onClick={showDrawer} />
+            <Bell className="w-6 h-6 cursor-pointer" onClick={showDrawer} />
           </div>
         </header>
-            <Notification showDrawer={open} onClose={onClose} />
+        <Notification showDrawer={open} onClose={onClose} />
 
         <div className="mb-8">
           <Swiper
@@ -162,8 +181,8 @@ const Home = () => {
         <div>
           <div className="gap-6 grid grid-cols-2 mt-14">
             {weeklySpecials.map((item) => (
-              <div className="relative flex flex-col justify-between bg-white mb-10 p-4 rounded-[28px] w-[175px] h-[187px]">
-                <div key={item.id} className="flex justify-center rounded-xl overflow-hidden">
+              <div key={item.id} className="relative flex flex-col justify-between bg-white mb-10 p-4 rounded-[28px] w-[175px] h-[187px]">
+                <div  className="flex justify-center rounded-xl overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.name}
@@ -176,10 +195,10 @@ const Home = () => {
                   <div className="flex flex-col">
                     <p className="left-2 relative text-green-200">${item.price}</p>
                     <div className="flex">
-                      <IconButton className="group">
+                      <IconButton className="group" onClick={() => handleAddToCart(item)}>
                         <IoBasket className="group-hover:text-white text-[18px] text-green-200" />
                       </IconButton>
-                      <IconButton className="group">
+                      <IconButton className="group" onClick={() => handleWishes(item)}>
                         <FaHeart className="group-hover:text-white text-[18px] text-green-200" />
                       </IconButton>
                     </div>

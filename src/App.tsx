@@ -2,10 +2,10 @@ import { Suspense, useEffect } from "react"
 import Loading from "./pages/loading/Loading"
 import { AppRoutes } from "./app/routers/router";
 import { makeServer } from "./server/server";
-import { useGetOnboardingStatusQuery } from "./app/apis/onboarding/api";
+// import { useGetOnboardingStatusQuery } from "./app/apis/onboarding/api";
 import { Provider } from "react-redux";
-import store, { persistor } from "./app/store/store";
-import { PersistGate } from "redux-persist/integration/react";
+import { store } from "./app/store/store";
+// import { PersistGate } from "redux-persist/integration/react";
 if (import.meta.env.NODE_ENV === "development") {
   makeServer()
 }
@@ -24,11 +24,11 @@ const App = () => {
   return (
     <div className="bg-[#1e1e1e] font-body">
       <Provider store={store}>
-        <PersistGate loading="null" persistor={persistor}>
-          <Suspense fallback={<Loading />}>
-            <AppRoutes />
-          </Suspense>
-        </PersistGate>
+        {/* <PersistGate loading="null" persistor={persistor}> */}
+        <Suspense fallback={<Loading />}>
+          <AppRoutes />
+        </Suspense>
+        {/* </PersistGate> */}
       </Provider>
     </div>
   )

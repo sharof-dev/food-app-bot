@@ -1,12 +1,12 @@
 import { FC } from "react"
-import { ButtonProps } from "../../shared/types/GlobalTypes"
+import { ButtonProps } from "../../../app/@types/GlobalTypes"
 
 
-const Button: FC<ButtonProps> = ({ onClick, children, text }) => {
+const Button: FC<ButtonProps> = ({ onClick, children, text, className }) => {
     return (
         <button
             onClick={onClick}
-            className="bg-green-200 hover:bg-green-100 rounded-full w-[370px] h-[60px] text-white"
+            className={`bg-green-200 hover:bg-green-100 rounded-full w-full text-white ${className}`}
         >
             {children || text}
         </button>

@@ -9,6 +9,8 @@ const FastDelivery = lazy(() => import("../../pages/fast-delivery/FastDelivery")
 const Wishes = lazy(() => import("../../pages/wishes/Wishes"))
 const Basket = lazy(() => import("../../pages/basket/Basket"))
 const Profile = lazy(() => import("../../pages/profile/Profile"))
+const Orders = lazy(() => import("../../pages/my-order/Orders"))
+const MyProfile = lazy(() => import("../../pages/my-profile/MyProfile"))
 export const AppRoutes: React.FC = () => {
     return <Router>
         <Routes>
@@ -20,6 +22,8 @@ export const AppRoutes: React.FC = () => {
                 <Route path="/home" element={<Home />} />
                 <Route path="/wishes" element={<Wishes />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/my-orders" element={<Orders />} />
+                <Route path="/my-profile" element={<MyProfile />} />
                 <Route path="/basket" element={<Basket />} />
             </Route>
         </Routes>
