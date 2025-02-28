@@ -29,21 +29,21 @@ const promotions = [
     id: 1,
     discount: "30%",
     title: "off from chicken burger",
-    bgColor: "from-green-500 to-green-400",
+    bgColor: "from-green-500 to-green-200",
     img: Img
   },
   {
     id: 2,
     discount: "25%",
     title: "off from pizza",
-    bgColor: "from-blue-500 to-blue-400",
+    bgColor: "from-blue-500 to-blue-200",
     img: Img
   },
   {
     id: 3,
     discount: "40%",
     title: "off from salads",
-    bgColor: "from-purple-500 to-purple-400",
+    bgColor: "from-purple-500 to-purple-200",
     img: Img
   }
 ];
