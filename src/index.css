@@ -15,3 +15,6 @@
         font-family: "Itim", sans-serif;
     }
 }
+body{
+    user-select: none;
+}

@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MainLayout from "../../layout/MainLayout";
+import Payments from "../../pages/payments/Payments";
 const Home = lazy(() => import("../../pages/home/Home"))
 const OrderForFood = lazy(() => import("../../pages/order-for-food/OrderForFood"))
 const GetStarted = lazy(() => import("../../pages/started/GetStarted"))
@@ -24,6 +25,7 @@ export const AppRoutes: React.FC = () => {
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/my-orders" element={<Orders />} />
                 <Route path="/my-profile" element={<MyProfile />} />
+                <Route path="/payments-page" element={<Payments />} />
                 <Route path="/basket" element={<Basket />} />
             </Route>
         </Routes>

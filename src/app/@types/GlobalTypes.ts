@@ -30,8 +30,21 @@ export interface CartItem {
     price: number;
     image: string;
     quantity: number;
-}
+};
 
 export type CartState = {
     items: CartItem[];
+};
+
+export type InputProps = {
+    id: string;
+    type?: "text" | "date" | "email" | "tel";
+    placeholder?: string;
+    value?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    disabled?: boolean;
+    className?: string;
+    autoComplete?: string;
+    required?: boolean;
+    maxLength?: number;
 }
